@@ -7,8 +7,4 @@ export class AppService {
       status: 'healthy',
     };
   }
-
-  hello() {
-    return 'Hello';
-  }
 }
