@@ -55,8 +55,10 @@ export class ChatGateway
           throw e;
         }
       }
+      const decodedToken: any = await this.jwtService.decode(token);
+      client.username = decodedToken.username;
       this.count += 1;
-      console.log(`Total connected: ${this.count}`)
+      console.log(`Total connected: ${this.count}`);
     } catch (e) {
       if (e.status == 400) {
         // send authorized
