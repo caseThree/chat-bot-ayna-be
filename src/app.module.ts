@@ -8,6 +8,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ChatModule } from './chat/chat.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { PlayerReconModule } from "./player-recon/playerRecon.module";
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { join } from 'path';
     UserModule,
     AuthModule,
     ChatModule,
+    PlayerReconModule,
     MongooseModule.forRoot(process.env.MONGO_DB_URL, {
       dbName: process.env.DB_NAME,
     }),
